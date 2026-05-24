@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "feader-plugin/v1",
+  "id": "yeats33.eye-care-ui.view",
+  "name": "Yeats Eye-Care Theme",
+  "version": "0.1.0",
+  "kind": "app-ui-theme",
+  "feaderApiVersion": "feader-view-plugin/v1",
+  "description": "Warm, low-glare eye-care theme for the entire Feader app shell, tuned for long reading sessions.",
+  "entry": "view-plugin.json",
+  "permissions": {
+    "network": [],
+    "credentials": [],
+    "execution": "none"
+  },
+  "maintainers": [
+    "Yeats"
+  ],
+  "authors": [
+    {
+      "name": "Yeats",
+      "evmAddress": "0x000000042c0e28cb7c59209e2fb745614814a4a4",
+      "avatarUrl": "https://github.com/Yeats33.png",
+      "website": "https://github.com/Yeats33",
+      "email": "contact@yeats.cc",
+      "githubId": "Yeats33"
+    }
+  ],
+  "logo": null,
+  "sha256": "f8feecd161280e37dde495979fc61f6397a6d010fafd99a170deabb69c2b9e0c"
+}

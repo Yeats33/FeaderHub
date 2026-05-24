@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "feader-view-plugin/v1",
+  "id": "yeats33.eye-care-ui.view",
+  "name": "Yeats Eye-Care Theme",
+  "version": "0.1.0",
+  "slot": "app-ui",
+  "description": "Warm, low-glare parchment shell that filters blue light and softens contrast for the whole Feader app.",
+  "capabilities": [
+    "app.theme",
+    "app.chrome",
+    "settings.toggle"
+  ],
+  "tokens": {
+    "colorBg": "#ece3cf",
+    "colorBgAccent": "rgba(124, 154, 111, 0.14)",
+    "colorPanel": "#f4ecd8",
+    "colorPanelStrong": "#faf3e1",
+    "colorPanelSoft": "rgba(244, 236, 216, 0.72)",
+    "colorHeading": "#3b352a",
+    "colorText": "#4f4838",
+    "colorMuted": "#8c8369",
+    "colorBorder": "#d8ccae",
+    "colorBrand": "#7c9a6f",
+    "colorAction": "#a9803f",
+    "colorActionHover": "#c0954f",
+    "colorSuccess": "#6e9a5c",
+    "shadowPanel": "0 18px 44px rgba(82, 64, 42, 0.14)",
+    "blueLightReduction": true,
+    "contrast": "soft",
+    "warmth": "warm"
+  },
+  "layout": {
+    "density": "comfortable",
+    "radius": "soft",
+    "motion": "calm"
+  },
+  "preview": {
+    "title": "Yeats reading room",
+    "description": "Warm parchment shell with reduced blue light and soft sage accents for long, comfortable reading sessions.",
+    "sampleData": [
+      {
+        "label": "Sources",
+        "value": 12
+      },
+      {
+        "label": "Unread",
+        "value": 48
+      }
+    ]
+  }
+}
