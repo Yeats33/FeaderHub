@@ -25,7 +25,7 @@
     "colorActionHover": "#c0954f",
     "colorSuccess": "#6e9a5c",
     "shadowPanel": "0 18px 44px rgba(82, 64, 42, 0.14)",
-    "blueLightReduction": true,
+    "blueLightReduction": "true",
     "contrast": "soft",
     "warmth": "warm"
   },
@@ -40,11 +40,11 @@
     "sampleData": [
       {
         "label": "Sources",
-        "value": 12
+        "value": "12"
       },
       {
         "label": "Unread",
-        "value": 48
+        "value": "48"
       }
     ]
   }
