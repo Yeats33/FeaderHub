@@ -4,106 +4,22 @@
   "name": "2048 论坛",
   "version": "0.1.0",
   "description": "2048核基地论坛 RSS 订阅源，支持板块列表与详情页提取，包含磁力链/种子提取。",
-  "auth": {
-    "checkUrl": "https://2048.info",
-    "loggedInXPath": "//*[contains(@class,'fl black')]"
-  },
-  "parameters": {
-    "urlTemplate": "{baseUrl}/thread.php?fid-{id}.html",
-    "params": [
-      {
-        "key": "id",
-        "label": "板块 ID",
-        "type": "select",
-        "placeholder": "选择板块",
-        "options": [
-          { "value": "3", "label": "最新合集" },
-          { "value": "4", "label": "亞洲無碼" },
-          { "value": "5", "label": "日本騎兵" },
-          { "value": "13", "label": "歐美新片" },
-          { "value": "15", "label": "國內原創" },
-          { "value": "16", "label": "中字原創" },
-          { "value": "18", "label": "三級寫真" },
-          { "value": "116", "label": "有碼.HD" },
-          { "value": "114", "label": "亞洲 SM.HD" },
-          { "value": "96", "label": "日韓 VR/3D" },
-          { "value": "97", "label": "歐美 VR/3D" },
-          { "value": "119", "label": "S-cute / Mywife / G-area" },
-          { "value": "23", "label": "網友自拍" },
-          { "value": "24", "label": "亞洲激情" },
-          { "value": "25", "label": "歐美激情" },
-          { "value": "26", "label": "露出偷窺" },
-          { "value": "27", "label": "高跟絲襪" },
-          { "value": "28", "label": "卡通漫畫" },
-          { "value": "135", "label": "原創达人" },
-          { "value": "21", "label": "唯美清純" },
-          { "value": "274", "label": "网络正妹" },
-          { "value": "276", "label": "亞洲正妹" },
-          { "value": "277", "label": "素人正妹" },
-          { "value": "278", "label": "COSPLAY" },
-          { "value": "29", "label": "女优情报" },
-          { "value": "213", "label": "獨家拍攝" },
-          { "value": "94", "label": "稀有首發" },
-          { "value": "283", "label": "网络见闻" },
-          { "value": "111", "label": "主播實錄" },
-          { "value": "88", "label": "珍稀套圖" },
-          { "value": "131", "label": "名站同步" },
-          { "value": "180", "label": "实用漫画" },
-          { "value": "72", "label": "网盘二区" },
-          { "value": "272", "label": "网盘三区" },
-          { "value": "195", "label": "分享福利" },
-          { "value": "280", "label": "国产精选" },
-          { "value": "79", "label": "高清福利" },
-          { "value": "216", "label": "高清首发" },
-          { "value": "76", "label": "多挂原创" },
-          { "value": "43", "label": "磁链迅雷" },
-          { "value": "67", "label": "正片大片" },
-          { "value": "66", "label": "H-GAME" },
-          { "value": "55", "label": "有声小说" },
-          { "value": "78", "label": "在线视频" },
-          { "value": "279", "label": "在线快播影院" },
-          { "value": "48", "label": "综合小说" },
-          { "value": "103", "label": "人妻意淫" },
-          { "value": "50", "label": "乱伦迷情" },
-          { "value": "54", "label": "长篇连载" },
-          { "value": "100", "label": "文学作者" },
-          { "value": "109", "label": "TXT 小说打包" },
-          { "value": "57", "label": "聚友客栈" },
-          { "value": "136", "label": "坛友自售" }
-        ],
-        "required": true
-      }
-    ],
-    "sections": [
-      {
-        "id": "thread-list",
-        "path": ["thread.php?fid-{id}.html"],
-        "url": "/thread.php?fid-{id}.html"
-      },
-      {
-        "id": "thread-detail",
-        "path": ["thread.php?fid-{id}&tid-*"],
-        "url": "/thread.php?fid-{id}&tid-{tid}"
-      }
-    ],
-    "defaults": {
-      "maxItems": 30,
-      "maxPages": 3
-    }
-  },
   "candidates": [
     {
-      "id": "thread-list",
-      "pageType": "list",
+      "id": "2048-thread-list",
+      "pageType": "forum-thread-list",
       "priority": 90,
       "detect": ["ajaxtable", "fid-"],
-      "promptRule": "2048 forum thread list page",
+      "promptRule": "2048 forum thread list page: items via //table[@id='ajaxtable']//tr[contains(@class,'tr3')], title a.subject, url a.subject/@href, next page via //a[contains(text(),'下一页')]/@href",
       "selectors": {
         "items": "//table[@id='ajaxtable']//tr[contains(@class,'tr3')]",
         "title": "a.subject",
         "url": "a.subject/@href",
-        "author": ".//td[contains(@class,'fl black')]",
+        "summary": ".//td[last()-1]",
         "publishedAt": "span.fl.gray/@title",
+        "author": ".//td[contains(@class,'fl black')]",
+        "content": null,
+        "image": ".//a[contains(@href,'pic')]//img/@src",
         "nextPage": "//a[contains(text(),'下一页')]/@href",
         "customFields": [
           {
@@ -120,22 +36,21 @@
           }
         ],
         "contentCleanup": [
-          { "pattern": "shortcut", "replacement": "" },
-          { "pattern": "tr\\[onmouseover.*?\\]", "replacement": "" }
+          { "pattern": "shortcut", "replacement": "" }
         ]
       }
     },
     {
-      "id": "thread-detail",
-      "pageType": "detail",
+      "id": "2048-thread-detail",
+      "pageType": "forum-post",
       "priority": 90,
       "detect": ["read_tpc", "copytext"],
       "promptRule": "2048 forum thread detail page with magnet/content extraction",
       "selectors": {
-        "items": "//*[@id='read_tpc']",
+        "items": "//*[@id='postlist']//td[contains(@class,'t_f')]",
         "title": "//*[@id='main']//*[contains(@class,'fl black')][1]",
         "url": "//*[@id='main']//a[contains(@href,'tid=')]/@href",
-        "content": "#read_tpc",
+        "content": "//*[@id='read_tpc']",
         "image": "//*[@id='read_tpc']//img/@data-original | //*[@id='read_tpc']//img/@src",
         "author": "//*[@class='fl black']",
         "publishedAt": "span.fl.gray/@title",
@@ -143,13 +58,7 @@
           {
             "key": "magnet",
             "label": "磁力链接",
-            "xpath": ".magnet-text | //text()[contains(.,'magnet:?xt=urn:btih')]",
-            "scope": "detail"
-          },
-          {
-            "key": "enclosure",
-            "label": "下载链接",
-            "xpath": "a[contains(@href,'rmdown.com')]/@href",
+            "xpath": "//text()[contains(.,'magnet:?xt=urn:btih')]",
             "scope": "detail"
           }
         ],
