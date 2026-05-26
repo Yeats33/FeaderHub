@@ -9,6 +9,14 @@
       "kind": "app-ui-theme",
       "manifest": "plugins/yeats33.eye-care-ui.view/manifest.json",
       "sha256": "0261e65f52cd25f44b40e5eb83043bed39948d5f905911114cf04afa3c83fc5b"
+    },
+    {
+      "id": "yeats33.2048.xpath",
+      "name": "2048 论坛",
+      "version": "0.1.0",
+      "kind": "static-xpath-rule-pack",
+      "manifest": "plugins/yeats33.2048.xpath/manifest.json",
+      "sha256": "d07fbf54582e0e07e54a83d8a5b0a72c680b53031851d113df303755768d6fc7"
     }
   ]
 }
