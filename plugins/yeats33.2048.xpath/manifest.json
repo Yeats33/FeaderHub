@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "feader-plugin/v1",
+  "id": "yeats33.2048.xpath",
+  "name": "2048 论坛",
+  "version": "0.1.0",
+  "kind": "static-xpath-rule-pack",
+  "feaderApiVersion": "xpath-rule-pack/v1",
+  "description": "2048核基地论坛 RSS 订阅源，支持板块列表与详情页提取。",
+  "entry": "xpath-rule-pack.json",
+  "permissions": {
+    "network": [
+      "2048.info",
+      "hjd2048.com",
+      "www.rmdown.com"
+    ],
+    "credentials": ["cookie"],
+    "execution": "none"
+  },
+  "maintainers": [
+    "Yeats"
+  ],
+  "authors": [
+    {
+      "name": "Yeats",
+      "evmAddress": "0x000000042c0e28cb7c59209e2fb745614814a4a4",
+      "avatarUrl": "https://github.com/Yeats33.png",
+      "website": "https://github.com/Yeats33",
+      "email": "contact@yeats.cc",
+      "githubId": "Yeats33"
+    }
+  ],
+  "logo": null,
+  "sha256": null
+}
