@@ -102,14 +102,8 @@
         "items": "//table[@id='ajaxtable']//tr[contains(@class,'tr3')]",
         "title": "a.subject",
         "url": "a.subject/@href",
-        "author": {
-          "xpath": ".//td[contains(@class,'fl black')]",
-          "scope": "item"
-        },
-        "publishedAt": {
-          "xpath": "span.fl.gray/@title",
-          "scope": "item"
-        },
+        "author": ".//td[contains(@class,'fl black')]",
+        "publishedAt": "span.fl.gray/@title",
         "nextPage": "//a[contains(text(),'下一页')]/@href",
         "customFields": [
           {
@@ -142,18 +136,9 @@
         "title": "//*[@id='main']//*[contains(@class,'fl black')][1]",
         "url": "//*[@id='main']//a[contains(@href,'tid=')]/@href",
         "content": "#read_tpc",
-        "image": {
-          "xpath": "//*[@id='read_tpc']//img/@data-original | //*[@id='read_tpc']//img/@src",
-          "scope": "detail"
-        },
-        "author": {
-          "xpath": "//*[@class='fl black']",
-          "scope": "detail"
-        },
-        "publishedAt": {
-          "xpath": "span.fl.gray/@title",
-          "scope": "detail"
-        },
+        "image": "//*[@id='read_tpc']//img/@data-original | //*[@id='read_tpc']//img/@src",
+        "author": "//*[@class='fl black']",
+        "publishedAt": "span.fl.gray/@title",
         "customFields": [
           {
             "key": "magnet",
