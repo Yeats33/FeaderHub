@@ -2,7 +2,7 @@
   "schemaVersion": "feader-plugin/v1",
   "id": "yeats33.2048.xpath",
   "name": "2048 论坛",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "kind": "static-xpath-rule-pack",
   "feaderApiVersion": "xpath-rule-pack/v1",
   "description": "2048核基地论坛 RSS 订阅源，支持板块列表与详情页提取。",
