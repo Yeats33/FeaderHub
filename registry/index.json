@@ -13,7 +13,7 @@
     {
       "id": "yeats33.2048.xpath",
       "name": "2048 论坛",
-      "version": "0.1.0",
+      "version": "0.0.1",
       "kind": "static-xpath-rule-pack",
       "manifest": "plugins/yeats33.2048.xpath/manifest.json",
       "sha256": "42f9833715c1d507eca47a6fd2df8227ae0f37b8150d7faa7239a4511701b626"
